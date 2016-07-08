@@ -39,4 +39,7 @@ function draw(piece,cxt){
     cxt.closePath();
     cxt.fillStyle=piece.color;
     cxt.fill();
+    cxt.strokeStyle="#fff";
+    cxt.lineWidth=2;
+    cxt.stroke();
 }

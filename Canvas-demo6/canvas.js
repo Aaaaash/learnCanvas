@@ -138,7 +138,8 @@ var WINDOW_HEIGHT=900;
 var RADIUS=10;
 var MARGIN_TOP=60;
 var MARGIN_LEFT=30;
-const endTime= new Date("2016/7/10,02:45:45");
+var endTime= new Date();
+endTime.setTime(endTime.getTime()+3600*1000);
 var curShowTimeSeconds=0;
 var balls=[];
 const colors=["#33b5e5","#0099cc","#aa66cc","#9933cc","#99cc00","#669900","#ffbb33","#ff8800","#ff4444","#ff004f"]

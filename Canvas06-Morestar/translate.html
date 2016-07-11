@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>translate</title>
+        <style media="screen">
+            *{
+                margin:0;padding: 0
+            }
+            #canvas{
+                border: 2px solid #000;margin: 100px auto;display: block
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script type="text/javascript">
+        window.onload=function(){
+            var canvas=document.getElementById('canvas');
+            canvas.width=800;
+            canvas.height=800;
+            var context=canvas.getContext('2d');
+            context.save();         //保存当前的图形状态
+            context.fillStyle="#4b4b4b";
+            context.translate(100,100);     //偏移原点坐标
+            context.fillRect(0,0,400,400);
+            // context.translate(-100,-100);             //重置
+            context.restore();                  //恢复原始状态
+
+            context.save();
+            context.fillStyle="green";
+            context.translate(300,300);         //多次调用translate偏移原点坐标，多个translate的效果会叠加
+            // 如果不想产生叠加效果，应该在绘制完图形后将原点坐标偏移回0,0
+            context.fillRect(0,0,400,400);
+            context.restore();
+        }
+        </script>
+    </body>
+</html>
